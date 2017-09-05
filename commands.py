@@ -1,14 +1,29 @@
 commands = {
     'global' : {
-        'test' : 'This is a test',
-        'memes' : 'So dank m8'
+        'channelowner' : {},
+        'mod' : {},
+        'sub' : {},
+        'all' : {
+            'test' : 'This is a test',
+            'memes' : 'So dank m8'
+        }
     },
-
     'some_channel' : {
-        'info' : 'Some channels !info command'
+        'channelowner' : {},
+        'mod' : {},
+        'sub' : {
+        },
+        'all' : {
+            'info' : 'Some channels !info command'
+        }
     },
     'some_other_channel' : {
-        'info' : 'Some other channels !info command',
-        'twitter' : 'Follow @some_other_channel on twitter!'
+        'channelowner' : {},
+        'mod' : {},
+        'sub' : {},
+        'all' : {
+            'info' : 'Some other channels !info command',
+            'twitter' : 'Follow @some_other_channel on twitter!'
+        }
     }
 }

@@ -2,7 +2,7 @@
 Twitch bot
 
     TODO ( Soon TM ):
-        * Check users authority in the channel when trying to execute a command
+        * Check if user has mod/sub priviliges when using commands
         * Fetch moderator-list for channels from Twitch
         * Check that the bot actually connects to twitch and the channels on startup
         * Move commands.py and blacklist.py to json or something for easier live editing?
@@ -76,11 +76,18 @@ class TwitchBot():
 
     def handle_commands(self, command, channel, username):
         """Execute a command"""
-        # Authorize user here
-
+        user_auth_level = self.get_user_authority_level(channel, username)
         for group in ['global', channel]:
-            if command in commands[group]:
-                self.send_message(commands[group][command], channel)
+            for auth_level in user_auth_level:
+                if command in commands[group][auth_level]:
+                    self.send_message(commands[group][command], channel)
+
+    def get_user_authority_level(self, channel, username):
+        authority_levels = ['channelowner', 'mod', 'sub', 'all']
+        if username == channel:
+            return authority_levels
+        else:
+            return authority_levels[3]
 
     def check_blacklist(self, message, channel):
         """Check if part of a message is blacklisted"""
