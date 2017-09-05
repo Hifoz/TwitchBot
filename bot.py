@@ -1,10 +1,6 @@
 """
 Twitch bot
 
-Resources:
-  https://dev.twitch.tv/docs/v5/guides/irc/
-  https://help.twitch.tv/customer/portal/articles/659095-chat-moderation-commands
-
     TODO ( Soon TM ):
         * Check users authority in the channel when trying to execute a command
         * Fetch moderator-list for channels from Twitch
