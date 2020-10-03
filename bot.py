@@ -1,7 +1,7 @@
 """
 Twitch bot
 
-    TODO ( Soon TM ):
+    TODO ( Soon™ ):
         * Check if user has mod/sub priviliges when using commands
         * Fetch moderator-list for channels from Twitch
         * Check that the bot actually connects to twitch and the channels on startup
